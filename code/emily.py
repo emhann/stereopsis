@@ -16,12 +16,13 @@ cube = Image.open("../images/left1.JPG").convert("L")
 imgarr = numpy.array(cube)
 
 mlab.imshow(imgarr)
-print(imgarr)
+#print(imgarr)
 
 tform = AffineTransform(scale=(1.3, 1.1), rotation=1, shear=0.7, translation=(210, 50))
-image = warp(cube, tform.inverse, output_shape=(350, 350))
+image = warp(cube, tform.inverse, output_shape=(1200, 800))
 
-coords = corner_peaks(corner_harris(image), min_distance=5)
-coords_subpix = corner_subpix(image, coords, window_size=13)
+coords = corner_peaks(corner_harris(image), min_distance=10)
+coords_subpix = corner_subpix(image, coords, window_size=20)
 
 mlab.imshow(coords_subpix)
+print(coords_subpix)
