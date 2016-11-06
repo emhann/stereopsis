@@ -39,7 +39,9 @@ def leggo():
 	dadHelp(joke)
 
 def main():
-	leggo()
+	while(True):
+		leggo()
+		pmb.alert(text="Here's another joke for you!", title='The Joker', button="I CAN'T WAIT!!!")
 
 if __name__ == "__main__":
     main()
