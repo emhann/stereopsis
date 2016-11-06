@@ -5,8 +5,8 @@ import sys
 
 
 #os.system("mkdir ~/util")
-#os.system("cp vir.py ~/util")
-
+#os.system("cp start.py ~/util")
+#os.system("python ~/util/start.py")
 
 def dadstantiate(fileName):
 	storage = []
