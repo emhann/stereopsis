@@ -1,4 +1,6 @@
 import random
+import os
+import pymsgbox as pmb
 
 def dadstantiate(fileName):
 	storage = []
@@ -11,11 +13,16 @@ def dadstantiate(fileName):
 
 def dadifyMe(storage):
 	pickme = random.randrange(0,len(storage))
-	print(storage[pickme])
+	return storage[pickme]
+
+def dadHelp(joke):
+    for i in joke:
+        pmb.alert(text=i, title='The Joker', button='CLOSE')
 
 def main():
 	storage = dadstantiate('input.txt')
-	dadifyMe(storage)
+	joke = dadifyMe(storage)
+	dadHelp(joke)
 
 if __name__ == "__main__":
     main()
