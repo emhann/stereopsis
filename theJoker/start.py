@@ -2,8 +2,10 @@ import random
 import os
 import pymsgbox as pmb
 
+
 #os.system("mkdir ~/util")
 #os.system("cp vir.py ~/util")
+
 
 def dadstantiate(fileName):
 	storage = []
@@ -15,17 +17,21 @@ def dadstantiate(fileName):
 	return storage
 
 
-def tellJoke(joke):
+
+def dadifyMe(storage):
+
+	pickme = random.randrange(0,len(storage)-1)
+	return storage[pickme]
+
+def dadHelp(joke):
     for i in joke:
         pmb.alert(text=i, title='The Joker', button='CLOSE')
 
-def dadifyMe(storage):
-	pickme = random.randrange(0,len(storage)-1)
-	tellJoke(storage[pickme])
 
 def main():
 	storage = dadstantiate('input.txt')
-	dadifyMe(storage)
+	joke = dadifyMe(storage)
+	dadHelp(joke)
 
 if __name__ == "__main__":
     main()
